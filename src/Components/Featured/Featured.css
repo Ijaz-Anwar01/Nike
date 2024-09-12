@@ -1,0 +1,45 @@
+.featured {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: 20px;
+    justify-items: center;
+    align-items: center;
+  }
+  
+  .images {
+    display: flex;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+    align-items: center;
+    gap: 10%;
+    margin-left: 40px ;
+    margin-right: 40px;
+  }
+  
+  .images img {
+    width: 400px;
+    height: 600px;
+    object-fit: cover;
+  }
+
+h2{
+    margin-left: 40px;
+  }
+
+  .images h4{
+
+    font-size: 20px;
+    margin-top: 20px;
+    font-weight: 400;
+
+  }
+
+  .images p{
+
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: 400;
+
+  }
+  
+  

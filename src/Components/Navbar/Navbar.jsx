@@ -33,7 +33,7 @@ const Navbar = () => {
 
         <div className="cart">
           <li><img src={favourites} alt="" /></li>
-          <li><img src={cart_logo} alt="" /></li>
+          <Link to='/cart'><li><img src={cart_logo} alt="" /></li></Link>
         </div>
       </div>
 

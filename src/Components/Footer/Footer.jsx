@@ -40,6 +40,7 @@ const Footer = () => {
                 <h4>Terms of Sale</h4>
                 <h4>Terms of Use</h4>
                 <h4>Nike Privacy Policy</h4>
+                <h4></h4>
             </div>
 
 

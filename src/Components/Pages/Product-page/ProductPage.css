@@ -52,47 +52,47 @@
     padding-left: 20px;
     flex-direction: column;
 }
-.title{
+
+.title {
     text-align: center;
 }
-.title h2{
+
+.title h2 {
     font-size: 26px;
 }
 
-.title p{
-    text-decoration: none;
+.title p {
     margin-top: 5px;
     text-align: center;
     font-size: 16px;
     font-weight: 200;
-
 }
 
-.price{
+.price {
     margin-top: 10px;
     text-align: center;
-    text-decoration: none;
 }
 
-.price p{
-    text-decoration: none;
+.price p {
     font-size: 14px;
     color: #848383;
 }
-.price .currentprice{
+
+.price .currentprice {
     font-size: 16px;
 }
 
-.price .mrp{
+.price .mrp {
     text-decoration: line-through;
 }
+
 .size {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 10px;
 }
+
 .size button {
-    
     background-color: #fff;
     color: #111;
     border: 1px solid #ccc;
@@ -106,14 +106,14 @@
 .size button:hover {
     background-color: #f0f0f0; 
     border: 1px solid #111;
-
 }
-.action-but{
+
+.action-but {
     display: flex;
     flex-direction: column;
 }
 
-.buynow{
+.buynow {
     margin-top: 40px;
     width: 300px;
     border-radius: 40px;
@@ -121,7 +121,7 @@
     font-size: 20px;
 }
 
-.fav{
+.fav {
     margin-top: 20px;
     width: 300px;
     height: 55px;
@@ -132,32 +132,68 @@
     font-size: 20px;
     font-weight: 500;
     border: 1px solid #a1a0a0;
-
 }
-.fav img{
+
+.fav img {
     width: 15px;
-
 }
 
-.fav:hover{
+.fav:hover {
     border: 1px solid #111;
     background-color: #fff;
 }
 
-.description{
+.description {
     margin-top: 40px;
 }
 
-.description p{
-
+.description p {
     font-size: 16px;
     color: #848383;
     font-style: italic;
-    text-decoration: none;
-
 }
 
+/* Responsive Styles */
+@media (max-width: 1200px) {
+  .productpage {
+    flex-direction: column;
+    align-items: center;
+  }
 
+  .left {
+    width: 100%;
+  }
 
+  .image {
+    width: 100%;
+  }
 
+  .image img {
+    width: 100%;
+  }
 
+  .right-side {
+    width: 100%;
+    padding-left: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .imgsel {
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .size {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .action-but {
+    align-items: center;
+  }
+
+  .buynow, .fav {
+    width: 100%;
+  }
+}

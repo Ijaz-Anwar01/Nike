@@ -1,35 +1,29 @@
-import './ProductPage.css';
-import like from '../../../assets/homeimg/heart.png';
-import { useState, useEffect, useContext } from 'react';
-import { useParams } from 'react-router-dom';
-import { getProductById } from '../../../Services/apiservices'; 
-import { CartContext } from '../../../assets/Context/CartContext';
+import './ProductPage.css'
+import like from '../../../assets/homeimg/heart.png'
+import { useState, useEffect,useContext } from 'react'
+import { useParams } from 'react-router-dom'
+import productData from '../../../assets/ProducData/Productdata'
+import { CartContext } from '../../../assets/Context/CartContext'
 
 const ProductPage = () => {
-  const { id } = useParams();
-  const [productDetails, setProductDetails] = useState(null);
+  const { id } = useParams()
+  const [productDetails, setProductDetails] = useState(null)
   const { addToCart } = useContext(CartContext);
-  const [mainImage, setMainImage] = useState('');
+  const [mainImage, setMainImage] = useState('')
 
   useEffect(() => {
-    const fetchProduct = async () => {
-      try {
-        const product = await getProductById(id);
-        setProductDetails(product);
-        setMainImage(product.images[0]);
-      } catch (error) {
-        console.error('Error fetching product:', error);
-      }
-    };
+    const selectedProduct = productData.find(p => p.id === parseInt(id, 10))
+    if (selectedProduct) {
+      setProductDetails(selectedProduct)
+      setMainImage(selectedProduct.images[0])
+    }
+  }, [id])
 
-    fetchProduct();
-  }, [id]);
-
-  if (!productDetails) return <div>Product not found</div>;
+  if (!productDetails) return <div>Product not found</div>
 
   const handleImageClick = (image) => {
-    setMainImage(image);
-  };
+    setMainImage(image)
+  }
 
   return (
     <div className='productpage'>
@@ -38,7 +32,7 @@ const ProductPage = () => {
           {productDetails.images.map((image, index) => (
             <img
               key={index}
-              src={`/images/${image}`} // Ensure this path is correct for your backend
+              src={image}
               alt={`Shoe ${index + 1}`}
               onClick={() => handleImageClick(image)}
             />
@@ -46,7 +40,7 @@ const ProductPage = () => {
         </div>
 
         <div className="image">
-          <img src={`/images/${mainImage}`} alt="Main" /> {/* Ensure this path is correct for your backend */}
+          <img src={mainImage} alt="Main" />
         </div>
       </div>
 
@@ -65,6 +59,7 @@ const ProductPage = () => {
         </div>
 
         <div className="size">
+          
           <button>UK 5</button>
           <button>UK 6</button>
           <button>UK 7</button>
@@ -83,7 +78,7 @@ const ProductPage = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default ProductPage;
+export default ProductPage

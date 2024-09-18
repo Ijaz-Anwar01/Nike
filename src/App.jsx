@@ -4,6 +4,7 @@ import Footer from "./Components/Footer/Footer"
 import Hero from "./Components/Hero/Hero"
 import Navbar from "./Components/Navbar/Navbar"
 import Navbar2 from "./Components/Navbar2/Navbar2"
+import Cart from './Components/Pages/Cart/Cart.jsx'
 import ProductPage from "./Components/Pages/Product-page/ProductPage.jsx"
 import Spotlight from "./Components/Spotlight/Spotlight"
 import Topbar from "./Components/TopBar/Topbar"
@@ -27,6 +28,8 @@ const App = () => {
             </>
           } />
           <Route path="/product/:id" element={<ProductPage />} />
+          <Route path="/cart" element={<Cart />} />
+
         </Routes>
         <Footer />
       </div>
